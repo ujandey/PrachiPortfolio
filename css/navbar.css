@@ -1,0 +1,88 @@
+.expanding-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #464242;
+  transition: all 0.3s ease;
+  height: 60px;
+}
+
+.expanding-navbar:hover {
+  background-color: #333;
+  height: 100px;
+}
+
+.expanding-navbar .logo {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 18px;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.expanding-navbar:hover .logo {
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  font-family: 'Press Start 2P', monospace;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: limegreen;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  margin-right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .expanding-navbar {
+    padding: 8px 15px;
+    height: 50px;
+  }
+  
+  .expanding-navbar:hover {
+    height: 70px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-links li a {
+    font-size: 10px;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+  }
+  
+  .nav-links li a {
+    font-size: 8px;
+  }
+}
