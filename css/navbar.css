@@ -53,6 +53,37 @@
   margin-right: 20px;
 }
 
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger Animation */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .expanding-navbar {
@@ -61,28 +92,66 @@
   }
   
   .expanding-navbar:hover {
-    height: 70px;
+    height: 50px; /* Remove hover expansion on mobile */
   }
   
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  /* Hide regular nav links by default on mobile */
   .nav-links {
-    gap: 15px;
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-color: #464242;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    transition: left 0.3s ease;
+    gap: 30px;
+  }
+  
+  /* Show nav links when active */
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
   }
   
   .nav-links li a {
-    font-size: 10px;
+    font-size: 16px;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    width: 200px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #333;
+    border-color: limegreen;
   }
   
   .logo img {
-    height: 60px;
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-links {
-    gap: 10px;
+  .nav-links li a {
+    font-size: 14px;
+    width: 180px;
   }
   
-  .nav-links li a {
-    font-size: 8px;
+  .logo img {
+    height: 35px;
   }
 }

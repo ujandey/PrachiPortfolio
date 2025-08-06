@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger Menu Functionality
+  const hamburgerMenu = document.getElementById('hamburger-menu');
+  const navLinks = document.getElementById('nav-links');
+  
+  hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+  
+  // Close mobile menu when a nav link is clicked
+  const navLinkItems = document.querySelectorAll('.nav-links a');
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerMenu.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!hamburgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
+      hamburgerMenu.classList.remove('active');
+      navLinks.classList.remove('active');
+    }
+  });
+
   const tabs = document.querySelectorAll('.tab');
   const previews = document.querySelectorAll('.project-preview');
   const details = document.querySelectorAll('.project-details');
