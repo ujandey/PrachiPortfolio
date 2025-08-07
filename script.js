@@ -87,4 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
   timelineItems.forEach(item => {
     observer.observe(item);
   });
+
+  // Experience Section Animation
+  const logEntries = document.querySelectorAll('.log-entry');
+
+  const experienceObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Add a slight delay for each entry to create a staggered effect
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 200);
+      }
+    });
+  }, {
+    threshold: 0.2 // Trigger when 20% of the item is visible
+  });
+
+  logEntries.forEach(entry => {
+    experienceObserver.observe(entry);
+  });
 });
