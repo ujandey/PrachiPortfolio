@@ -1,7 +1,11 @@
 .education-section {
     position: relative;
     padding: 100px 50px;
-    background: url('../assets/images/background2.png') no-repeat center center/cover;
+    min-height: 100vh;
+    background-image: url('../assets/images/background2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     color: white;
 }
@@ -90,4 +94,39 @@
     font-size: 1em;
     line-height: 1.6;
     color: #000;
+}
+
+/* ---------- Mobile adjustments ---------- */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px; /* move center line to left */
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px; /* space for line & dot */
+        padding-right: 25px;
+    }
+
+    .timeline-container.left,
+    .timeline-container.right {
+        left: 0;
+    }
+
+    .timeline-container::after {
+        left: 18px;
+    }
+
+    .timeline-content {
+        padding: 15px 20px;
+    }
+
+    .timeline-content h2 {
+        font-size: 1.2em;
+    }
+
+    .timeline-content p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
 }

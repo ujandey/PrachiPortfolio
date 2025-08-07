@@ -37,6 +37,13 @@
   margin-bottom: 2rem;
 }
 
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .start-btn {
   display: inline-block;
   padding: 12px 24px;

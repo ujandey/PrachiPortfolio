@@ -44,19 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
       const projectId = tab.dataset.project;
       document.getElementById(projectId).classList.remove('hidden');
 
-      // Update details button
-      detailsBtn.dataset.details = `${projectId}-details`;
+      // Update details button (if exists)
+      if (detailsBtn) {
+        detailsBtn.dataset.details = `${projectId}-details`;
+      }
       
       // Hide all details first
       details.forEach(detail => detail.classList.remove('show'));
       
       // Reset button text
-      detailsBtn.textContent = 'More Details';
+      if (detailsBtn) {
+        detailsBtn.textContent = 'More Details';
+      }
     });
   });
 
-  // Details button toggle
-  detailsBtn.addEventListener('click', () => {
+  // Details button toggle (only if button exists)
+  if (detailsBtn) {
+    detailsBtn.addEventListener('click', () => {
     const detailsId = detailsBtn.dataset.details;
     const detailsElement = document.getElementById(detailsId);
     
@@ -70,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       detailsBtn.textContent = 'Hide Details';
     }
   });
+  }
 
   // Education Timeline Animation
   const timelineItems = document.querySelectorAll('.timeline-content');
@@ -97,11 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add a slight delay for each entry to create a staggered effect
         setTimeout(() => {
           entry.target.classList.add('visible');
-        }, index * 200);
+        }, index * 150);
+          experienceObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.2 // Trigger when 20% of the item is visible
+    threshold: 0.05 // Trigger when just 5% of the item is visible
   });
 
   logEntries.forEach(entry => {
