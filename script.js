@@ -70,4 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
       detailsBtn.textContent = 'Hide Details';
     }
   });
+
+  // Education Timeline Animation
+  const timelineItems = document.querySelectorAll('.timeline-content');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1 // Trigger when 10% of the item is visible
+  });
+
+  timelineItems.forEach(item => {
+    observer.observe(item);
+  });
 });
