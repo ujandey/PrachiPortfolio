@@ -1,0 +1,98 @@
+/* Block Navigation heading */
+.block-nav-heading {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Minecraft-style block navigation grid */
+.block-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 40px 10%;
+  justify-items: center;
+}
+
+.block-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* square */
+  background-color: #8fd14f; /* placeholder grass */
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f6f2f2;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.8);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.3s;
+}
+
+.block-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* semi-transparent overlay */
+  border-radius: inherit;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.block-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 6px 6px 0 #000;
+  filter: brightness(1.1);
+}
+
+.block-card:hover::after {
+  opacity: 0.15;
+}
+
+.block-card:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+
+.block-card.projects {
+  background-image: url('../assets/blocks/stone.png'); /* stone texture */
+  background-size: cover;
+}
+.block-card.experience {
+  background-image: url('../assets/blocks/log.png'); /* log texture */
+  background-size: cover;
+}
+.block-card.certifications {
+  background-image: url('../assets/blocks/crystal.png'); /* crystal texture */
+  background-size: cover;
+}
+.block-card.skills {
+  background-image: url('../assets/blocks/grass.png'); /* grass texture */
+  background-size: cover;
+}
+.block-card.education {
+  background-image: url('../assets/blocks/iron.png'); /* iron texture */
+  background-size: cover;
+}
+
+@media (max-width: 600px) {
+  .block-nav {
+    padding: 20px 5%;
+    gap: 15px;
+  }
+  .block-card {
+    font-size: 0.45rem;
+  }
+}
