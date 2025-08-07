@@ -1,0 +1,243 @@
+/* Minecraft Trading Screen Styles */
+.trading-screen {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8B4513 0%, #A0522D 50%, #CD853F 100%);
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(160, 82, 45, 0.3) 0%, transparent 50%);
+  padding: 80px 20px 40px;
+  position: relative;
+}
+
+.trading-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.trading-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #FFD700;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Trading Interface */
+.trading-interface {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  border: 6px solid #8B4513;
+  border-radius: 12px;
+  box-shadow: 
+    inset 0 0 0 3px #FFD700,
+    0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.trader-side {
+  background: rgba(139, 69, 19, 0.8);
+  border: 4px solid #000;
+  border-radius: 8px;
+  padding: 30px 20px;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.trader-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #FFD700;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 20px;
+}
+
+.trade-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.trade-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 16px;
+  border: 3px solid #555;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.trade-item:hover {
+  border-color: #FFD700;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.item-icon {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* Item Icons */
+.briefcase { background: linear-gradient(45deg, #8B4513, #A0522D); }
+.internship { background: linear-gradient(45deg, #4169E1, #6495ED); }
+.remote { background: linear-gradient(45deg, #32CD32, #90EE90); }
+.contract { background: linear-gradient(45deg, #FF6347, #FFA07A); }
+.enchanted-book { background: linear-gradient(45deg, #9932CC, #DDA0DD); }
+.potion { background: linear-gradient(45deg, #FF1493, #FFB6C1); }
+.pickaxe { background: linear-gradient(45deg, #708090, #C0C0C0); }
+.creative { background: linear-gradient(45deg, #FFD700, #FFF8DC); }
+
+.item-name {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #FFF;
+  text-shadow: 1px 1px 0 #000;
+}
+
+/* Trade Button */
+.trade-center {
+  display: flex;
+  justify-content: center;
+}
+
+.trade-button {
+  background: linear-gradient(45deg, #32CD32, #90EE90);
+  border: 4px solid #000;
+  border-radius: 8px;
+  padding: 20px 30px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.trade-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 #000;
+  background: linear-gradient(45deg, #90EE90, #98FB98);
+}
+
+.trade-button:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.trade-arrow {
+  font-size: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Contact Book */
+.contact-book {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.book-cover {
+  background: linear-gradient(45deg, #8B4513, #A0522D);
+  border: 4px solid #000;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 4px 4px 0 #000;
+  max-width: 500px;
+  width: 100%;
+}
+
+.book-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2rem;
+  color: #FFD700;
+  text-shadow: 2px 2px 0 #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.book-content {
+  background: rgba(255, 248, 220, 0.9);
+  border: 3px solid #000;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 8px 0;
+  border-bottom: 2px dotted #8B4513;
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.contact-label {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #000;
+}
+
+.contact-link {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: #4169E1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #FF6347;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trading-interface {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .trading-title {
+    font-size: 1.5rem;
+  }
+  
+  .trader-title {
+    font-size: 0.8rem;
+  }
+  
+  .trade-button {
+    padding: 15px 25px;
+    font-size: 0.8rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
